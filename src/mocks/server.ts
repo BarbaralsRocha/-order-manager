@@ -1,4 +1,5 @@
 import { setupServer } from 'msw/node';
-import { handlers } from './handler';
+import { handlerOrderManager } from '../features/OrderManager/mocks/handlerOrderManager';
+import { handlerOrder } from '../features/Orders/mocks/handlerOrder';
 
-export const server = setupServer(...handlers);
+export const server = setupServer(...handlerOrderManager, ...handlerOrder);
